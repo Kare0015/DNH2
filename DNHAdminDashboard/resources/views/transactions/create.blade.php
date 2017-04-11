@@ -17,8 +17,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        {!! Form::label('transactienaam', 'Transactie Naam', ['class' => 'control-label']) !!}
-                        {!! Form::text('transactienaam', null, ['class' => 'form-control', 'placeholder' => 'Schoonmaakartikelen']) !!}
+                        {!! Form::label('transactionname', 'Transactie Naam', ['class' => 'control-label']) !!}
+                        {!! Form::text('transactionname', null, ['class' => 'form-control', 'placeholder' => 'Schoonmaakartikelen']) !!}
                     </div>
                 </div>
                 <!-- /.col -->
@@ -31,8 +31,8 @@
                 <!-- /.col -->
                 <div class="col-md-6">
                     <div class="form-group">
-                        {!! Form::label('rubriek', 'Rubriek', ['class' => 'control-label']) !!}
-                        {!! Form::number('rubriek', null, ['class' => 'form-control', 'placeholder' => '1']) !!}
+                        {!! Form::label('category_id', 'Categorie', ['class' => 'control-label']) !!}
+                        {!! Form::select('category_id', $categories, ['class' => 'form-control', 'placeholder' => '1']) !!}
                     </div>
                 </div>
                 <!-- /.col -->

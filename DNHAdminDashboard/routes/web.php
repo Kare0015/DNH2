@@ -34,9 +34,8 @@ Route::resource('member', 'MemberController');
 
 Route::resource('transaction', 'TransactionController');
 
-Route::get('/transactions/toevoegen', function() {
-    return view('transactions.create');
-});
+Route::get('/transactions/toevoegen', 'TransactionController@create');
+
 Route::get('/members/toevoegen', 'MemberController@create');
 
 Route::post('new-member', array('uses' => 'MemberController@store'));

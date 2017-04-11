@@ -32,10 +32,10 @@
                         {{--{{ dd(get_defined_vars()['__data']) }}--}}
                         @foreach($transactions as $transaction)
                             <tr>
-                                <td>{{$transaction['rubriek']}}</td>
-                                <td>{{$transaction['transactienaam']}}</td>
-                                <td>{{$transaction['klantnaam']}}</td>
-                                <td>€ {{$transaction['bedrag']}}</td>
+                                <td>{{$transaction['category']}}</td>
+                                <td>{{$transaction['transactionname']}}</td>
+                                <td>{{$transaction['customername']}}</td>
+                                <td>€ {{$transaction['amount']}}</td>
                                 <td>{{$transaction['created_at']}}</td>
                             </tr>
                         @endforeach

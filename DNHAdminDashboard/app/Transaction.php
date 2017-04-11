@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Transaction extends Model
 {
     protected $fillable = [
-        'id', 'transactienaam', 'bedrag', 'rubriek', 'klantnaam'
+        'id', 'transactionname', 'amount', 'category', 'customername'
     ];
+
+    public function category()
+    {
+        return $this->hasOne('App\Category');
+    }
 }
