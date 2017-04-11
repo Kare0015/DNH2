@@ -13,9 +13,8 @@
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">Leden</h3>
-                    <a href="{{ url('/transactions/toevoegen') }}" class="btn btn-primary pull-right">Handmatig toevoegen</a>
+                    <a href="{{ url('/transaction/create') }}" class="btn btn-primary pull-right">Handmatig toevoegen</a>
                 </div>
-                <!-- /.box-header -->
                 <div class="box-body">
                     <table id="example1" class="table table-bordered table-striped table-hover">
                         <thead>
@@ -28,11 +27,9 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {{--{{ dd(get_defined_vars()) }}--}}
-                        {{--{{ dd(get_defined_vars()['__data']) }}--}}
                         @foreach($transactions as $transaction)
                             <tr>
-                                <td>{{$transaction['category']}}</td>
+                                <td>{{$transaction->category->name}}</td>
                                 <td>{{$transaction['transactionname']}}</td>
                                 <td>{{$transaction['customername']}}</td>
                                 <td>€ {{$transaction['amount']}}</td>
@@ -43,7 +40,6 @@
                     </table>
                     <br/>
                 </div>
-                <!-- /.box-body -->
             </div>
         </div>
     </div>

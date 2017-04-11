@@ -27,17 +27,24 @@ class TransactionController extends Controller {
         // Save this object in the database
         $transactions->save();
         // Redirect to the user.index page with a success message.
-        return redirect('/transactions/translist');
+        return redirect('/transaction/index');
     }
 
-    public function translist(){
+    public function index(){
         $transactions = App\Transaction::all();
-        return view('/transactions/index', compact('transactions'));
+        return view('transaction/index', compact('transactions'));
+        //return view ( 'transaction/index', [
+        //    'transactions' => Transaction::orderBy('id','asc')->get(),
+        //] );
     }
 
     public function create()
     {
         $categories = Category::pluck('name', 'id');
-        return view('transactions/create')->with('categories', $categories);
+        return view('transaction/create')->with('categories', $categories);
+    }
+    public function show($id)
+    {
+        return TransactionController::index();
     }
 }

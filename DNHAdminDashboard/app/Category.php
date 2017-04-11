@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $fillable = [
-        'naam'
+        'name', 'transaction_id'
     ];
 
     public function transaction()
     {
-        return $this->hasOne('App\Transaction');
+        return $this->hasMany('App\Transaction');
     }
 }
