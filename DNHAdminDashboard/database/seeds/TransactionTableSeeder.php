@@ -13,7 +13,7 @@ class TransactionTableSeeder extends Seeder
     {
         DB::table('transaction')->insert([
             'bedrag' => 'Pieter',
-            'tussenvoegsel' => 'van de'
+            'tussenvoegsel' => 'van de',
             'achternaam' => 'groteboot',
             'woonplaats' => 'Nieuwland',
             'boten' => 5

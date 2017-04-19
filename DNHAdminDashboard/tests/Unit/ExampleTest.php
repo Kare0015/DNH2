@@ -15,7 +15,8 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $this->visit('/')
-                ->see('De Nieuwlandse Haven');
+        $response = $this->get('/');
+
+        $response->assertStatus(200);
     }
 }
