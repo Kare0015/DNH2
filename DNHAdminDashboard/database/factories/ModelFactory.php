@@ -15,16 +15,13 @@ use App\Invoice;
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
 
+$factory->define(App\Category::class, function (Faker\Generator $faker){
     return [
         'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
     ];
 });
+
 
 $factory->define(App\Member::class, function (Faker\Generator $faker) {
 
@@ -47,6 +44,16 @@ $factory->define(App\Invoice::class, function (Faker\Generator $faker) {
         'description' => $faker->name,
         'date' => $faker->date(),
         'member_id' => factory(App\Member::class)->create()->id,
+    ];
+});
+
+
+$factory->define(App\Transaction::class, function (Faker\Generator $faker){
+    return [
+        'transactionname' => $faker->name,
+        'amount' => $faker->biasedNumberBetween($min = 1, $max = 200, $function = 'sqrt'),
+        'category_id' => $faker->biasedNumberBetween($min = 0, $max = 7, $function = 'sqrt'),
+        'customername' => $faker->name,
     ];
 });
 
