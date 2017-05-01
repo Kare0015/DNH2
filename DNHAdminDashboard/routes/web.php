@@ -19,11 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/admin/facturen', 'FacturenController@facturen');
+//Route::get('/admin/facturen', 'FacturenController@facturenGenereren');
 
 Route::get('/admin/enkelefactuur/{id}', 'FacturenController@enkelefactuur');
 
-Route::get('/facturen/overview', 'FacturenController@facturenOverview');
+Route::resource('invoice', 'invoiceController');
 
 //Route::get('/transactions/index', 'TransactionController@index');
 
