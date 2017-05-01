@@ -55,16 +55,6 @@ class MemberController extends Controller
         return redirect('/members');
     }
 
-    public function show($id)
-    {
-        return view ( 'members/show', ['member' => Member::findOrFail($id),] );
-    }
-
-    public function edit($id)
-    {
-        return view ( 'members/edit', ['member' => Member::findOrFail($id),] );
-    }
-
     public function update(Request $request, $id)
     {
         // Check if the form was correctly filled in
@@ -95,6 +85,16 @@ class MemberController extends Controller
         return redirect ( 'member' )->with( 'success', $member->firstname.' '.$member->prefix.' '.$member->surname.' is bijgewerkt.' );
     }
 
+    public function show($id)
+    {
+        return view ( 'members/show', ['member' => Member::findOrFail($id),] );
+    }
+
+    public function edit($id)
+    {
+        return view ( 'members/edit', ['member' => Member::findOrFail($id),] );
+    }
+
     public function destroy($id)
     {
         // Find the member object in the database
@@ -104,5 +104,6 @@ class MemberController extends Controller
         // Redirect to the member.index page with a success message.
         return redirect ( '/members' )->with( 'success', $member->name.' is verwijderd.' );
     }
+
 
 }
