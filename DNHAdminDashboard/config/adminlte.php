@@ -140,6 +140,11 @@ return [
 //            'label'       => 4,
 //            'label_color' => 'success',
         ],
+        [
+            'text'        => 'create facturen',
+            'url'         => 'facturen/create',
+            'icon'        => 'file-pdf-c',
+        ]
 //        'ACCOUNT SETTINGS',
 //        [
 //            'text' => 'Profile',

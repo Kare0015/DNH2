@@ -25,6 +25,8 @@ Route::get('/admin/enkelefactuur/{id}', 'FacturenController@enkelefactuur');
 
 Route::get('/facturen/overview', 'FacturenController@facturenOverview');
 
+Route::get('/facturen/create', 'FacturenController@createPDF');
+
 Route::get('/transactions/translist', 'TransactionController@translist');
 
 
@@ -42,3 +44,6 @@ Route::get('/members/toevoegen', 'MemberController@create');
 Route::post('new-member', array('uses' => 'MemberController@store'));
 
 Route::get('/members/{id}', 'MemberController@show');
+
+route::get('/facturen/create', 'FacturenController@createPDF');
+
