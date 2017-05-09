@@ -65,4 +65,17 @@ class BoatTest extends TestCase
         $uut = factory(\App\Boat::class)->create(['boatname' => null]);
     }
 
+    /** @test */
+    public function it_can_be_a_mainboat()
+    {
+        $uut = factory(\App\Boat::class)->create(['mainboat' => 1, 'boatname' => 'TRUETRUETRUE']);
+        $this->assertEquals(true, $uut->mainboat);
+    }
+
+    /** @test */
+    public function it_can_be_no_mainboat()
+    {
+        $uut = factory(\App\Boat::class)->create(['mainboat' => 0, 'boatname' => 'HOIHOIHOI']);
+        $this->assertEquals(false, $uut->mainboat);
+    }
 }

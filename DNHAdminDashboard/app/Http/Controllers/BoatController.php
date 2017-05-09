@@ -19,8 +19,6 @@ class BoatController extends Controller
     return view('/boats/index', [
       'boats' => Boat::orderBy('id', 'asc')->get(),
     ]);
-//    $boats = App\Boat::all();
-//    return view('/boats/index', compact('boats'));
   }
 
   public function create()

@@ -44,5 +44,6 @@ $factory->define(App\Boat::class, function (Faker\Generator $faker) {
         'member_id' => factory(App\Member::class)->create()->id,
         'boatname' => $faker->name,
         'boatlength' => $faker->numberBetween(1,25),
+        'mainboat' => $faker->boolean(50),
     ];
 });

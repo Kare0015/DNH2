@@ -27,9 +27,9 @@
   					                            <td class="table-text">{{ $boat->boatlength }}</td>
   					                            <td class="table-text">
   						                                  @if (isset($boat->member))
-  						                                  {{ $boat->member->firstname }}
-                                                {{ $boat->member->prefix }}
-                                                {{ $boat->member->surname }}
+                                                        {{ $boat->member->firstname }}
+                                                        {{ $boat->member->prefix }}
+                                                        {{ $boat->member->surname }}
   						                                  @endif
   					                            </td>
   				                    </tr>
