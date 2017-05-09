@@ -23,31 +23,28 @@
                             <th>Tussenvoegsel</th>
                             <th>Achternaam</th>
                             <th>Adres</th>
-                            <th>Boten</th>
                             <th>Totaalbedrag Factuur Periode {{date("Y")-1}}</th>
                             <th></th>
                         </tr>
                         </thead>
                         <tbody>
-                        {{--{{ dd(get_defined_vars()) }}--}}
-                        {{--{{ dd(get_defined_vars()['__data']) }}--}}
-                        @foreach($members as $member)
+                        @foreach($invoices as $invoice)
                             <tr>
-                                <td>{{$member['firstname']}}</td>
-                                <td>{{$member['prefix']}}</td>
-                                <td>{{$member['surname']}}</td>
-                                <td>{{$member['street']."  ".$member['number'].", ".$member['city']}}</td>
-                                <td>{{$member['boten']}}</td>
-                                <td>€ {{$member['totaalbedrag']}}</td>
+                                <td>{{$invoice->member->firstname}}</td>
+                                <td>{{$invoice->member->prefix}}</td>
+                                <td>{{$invoice->member->surname}}</td>
+                                <td>{{$invoice->member->street."  ".$invoice->member->number.", ".$invoice->member->city}}</td>
+                                {{--<td>{{$invoice->member->}}</td>--}}
+                                <td>€ {{$invoice->totalamount}}</td>
                                 <th>
-                                    <a href="/admin/enkelefactuur/{{$member['id']}}" class="btn btn-primary">Genereer deze factuur</a>
+                                    <a href=" URL::to('/admin/enkelefactuur/{{ $invoice->id  }})" class="btn btn-primary">Genereer deze factuur</a>
                                 </th>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
                     <br/>
-                    <a class="btn btn-primary" href="/facturen/overview">Genereer alle facturen ({{$totalFacturen}})</a>
+                    <a class="btn btn-primary" href="{{ URL::to('/facturen/overview') }}">Genereer alle facturen ({{$totalInvoices}})</a>p
                 </div>
                 <!-- /.box-body -->
             </div>
