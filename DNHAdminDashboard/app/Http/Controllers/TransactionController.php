@@ -26,7 +26,7 @@ class TransactionController extends Controller {
         ] );
         // Save this object in the database
         $transactions->save();
-        // Redirect to the user.index page with a success message.
+        // Redirect to the user.index page with a success message.9
         return redirect('/transaction/index');
     }
 

@@ -28,6 +28,7 @@
                         </tr>
                         </thead>
                         <tbody>
+                        {{--Create a new table row for each invoice with the variables --}}
                         @foreach($invoices as $invoice)
                             <tr>
                                 <td>{{$invoice->member->firstname}}</td>
@@ -37,16 +38,40 @@
                                 {{--<td>{{$invoice->member->}}</td>--}}
                                 <td>€ {{$invoice->totalamount}}</td>
                                 <th>
-                                    <a href=" URL::to('/admin/enkelefactuur/{{ $invoice->id  }})" class="btn btn-primary">Genereer deze factuur</a>
+                                    {{--Link to the singe view of a invoice--}}
+                                    <a href="{{ URL::to('/admin/enkelefactuur/' . $invoice->id ) }})" class="btn btn-primary">Genereer deze factuur</a>
                                 </th>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
                     <br/>
-                    <a class="btn btn-primary" href="{{ URL::to('/facturen/overview') }}">Genereer alle facturen ({{$totalInvoices}})</a>p
+
+                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#confirmAll">
+                        Genereer alle facturen ({{$totalInvoices}})
+                    </button>
                 </div>
                 <!-- /.box-body -->
+            </div>
+            <div class="modal fade" id="confirmAll">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title">Alle facturen generen</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Weet u zeker dat u alle facturen wilt generen?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Annuleren</button>
+                            <a class="btn btn-primary" href="{{ URL::to('/facturen/overview') }}">Ja, genereer alle facturen ({{$totalInvoices}})</a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
             </div>
         </div>
     </div>
