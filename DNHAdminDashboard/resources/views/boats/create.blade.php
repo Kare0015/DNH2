@@ -32,6 +32,12 @@
                                         {!! Form::label('member_id', 'Eigenaar', ['class' => 'control-label']) !!}
                                         {!! Form::select('member_id', $members, null, ['class' => 'form-control', 'placeholder' => 'Maak een keuze uit de lijst']) !!}
                                     </div>
+                                    <div class="col-sm-6">
+                                        <div class="checkbox icheck">
+                                            {!! Form::hidden('mainboat', 0) !!}
+                                            {!! Form::checkbox('mainboat', 1, true) !!}
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="form-group">

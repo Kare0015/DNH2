@@ -38,12 +38,14 @@ class BoatController extends Controller
           'boatname' => 'required|max:255',
           'boatlength' => 'required|min:0',
           'member_id' => 'required|max:255',
+
       ] );
       // Creates new boat with the info in the request
       $boat = boat::create ( [
           'boatname' => $request ['boatname'],
           'boatlength' => $request ['boatlength'],
           'member_id' => $request ['member_id'],
+          'mainboat' => $request ['mainboat'],
       ] );
 
 //      $member = Member::find($request ['member_id']);

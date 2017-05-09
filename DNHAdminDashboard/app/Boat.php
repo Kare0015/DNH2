@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Boat extends Model
 {
     protected $fillable = [
-        'id', 'member_id', 'boatname', 'boatlength',
+        'id', 'member_id', 'boatname', 'boatlength', 'mainboat',
     ];
 
     public function member()

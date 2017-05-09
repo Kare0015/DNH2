@@ -18,6 +18,7 @@ class CreateBoatsTable extends Migration
             $table->integer('member_id');
             $table->string('boatname');
             $table->integer('boatlength')->unsigned();
+            $table->boolean('mainboat');
             $table->timestamps();
         });
     }
