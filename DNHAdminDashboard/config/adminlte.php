@@ -128,7 +128,7 @@ return [
         ],
         [
             'text'        => 'Facturen',
-            'url'         => 'admin/facturen',
+            'url'         => 'invoice',
             'icon'        => 'file-pdf-o',
 //            'label'       => 4,
 //            'label_color' => 'success',
