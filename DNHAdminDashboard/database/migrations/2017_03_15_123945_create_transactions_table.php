@@ -17,7 +17,6 @@ class CreateTransactionsTable extends Migration
             $table->increments('id');
             $table->string('transactionname');
             $table->string('customername');
-            $table->string('category');
             $table->string('amount');
             $table->timestamps();
         });

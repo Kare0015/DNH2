@@ -1,7 +1,9 @@
-
+{{--{{dd($members)}}--}}
 <?php
 // (c) Xavier Nicolay
 // Exemple de génération de devis/facture PDF
+
+
 
 
 $pdf = new PDF_Invoice( 'P', 'mm', 'A4' );
@@ -15,7 +17,9 @@ $pdf->fact_dev( "Contributiefactuur ", date ('Y'));
 $pdf->addDate( date ('d-m-Y'));
 $pdf->addClient("CL01");
 $pdf->addPageNumber("1");
-$pdf->addClientAdresse("Ste\nM. XXXX\n3ème étage\n33, rue d'ailleurs\n75000 PARIS");
+
+$pdf->addClientAdresse("Bas Karelse\n Straat\n Middelburg");
+
 $pdf->addReglement(9);
 $pdf->addEcheance("Datum");
 $pdf->addNumTVA("FR888777666");

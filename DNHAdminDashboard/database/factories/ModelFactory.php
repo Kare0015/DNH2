@@ -12,13 +12,18 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
 
+$factory->define(App\Category::class, function (Faker\Generator $faker){
     return [
         'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(App\Transaction::class, function (Faker\Generator $faker){
+    return [
+        'transactionname' => $faker->name,
+        'amount' => $faker->biasedNumberBetween($min = 1, $max = 200, $function = 'sqrt'),
+        'category_id' => $faker->biasedNumberBetween($min = 0, $max = 7, $function = 'sqrt'),
+        'customername' => $faker->name,
     ];
 });

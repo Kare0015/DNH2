@@ -135,7 +135,7 @@ return [
         ],
         [
             'text'        => 'Transactielijst',
-            'url'         => 'transactions/translist',
+            'url'         => 'transaction/index',
             'icon'        => 'credit-card',
 //            'label'       => 4,
 //            'label_color' => 'success',

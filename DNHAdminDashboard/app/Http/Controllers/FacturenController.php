@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 //namespace app toegevoegd om alle leden op te kunnen halen
 use App;
+//require(pdfTemp.php);
 
 
 class FacturenController extends Controller
@@ -34,6 +35,9 @@ class FacturenController extends Controller
     }
     public function createPDF()
     {
-        return view('/facturen/create');
+
+        $members = App\Member::all();
+        return view('/facturen/create', compact('members'));
+//        return view('/facturen/pdfTemp', compact('members'));
     }
 }

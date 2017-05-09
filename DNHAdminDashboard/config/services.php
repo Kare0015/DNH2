@@ -24,7 +24,6 @@ return [
         'secret' => env('SES_SECRET'),
         'region' => 'us-east-1',
     ],
-
     'sparkpost' => [
         'secret' => env('SPARKPOST_SECRET'),
     ],

@@ -29,21 +29,17 @@ Route::get('/facturen/create', 'FacturenController@createPDF');
 
 Route::get('/transactions/translist', 'TransactionController@translist');
 
-
 Route::get('/members', 'MemberController@index');
 
 Route::resource('member', 'MemberController');
 
 Route::resource('transaction', 'TransactionController');
 
-Route::get('/transactions/toevoegen', function() {
-    return view('transactions.create');
-});
 Route::get('/members/toevoegen', 'MemberController@create');
 
 Route::post('new-member', array('uses' => 'MemberController@store'));
 
 Route::get('/members/{id}', 'MemberController@show');
 
-route::get('/facturen/create', 'FacturenController@createPDF');
+Route::get('/facturen/create', 'FacturenController@createPDF');
 
