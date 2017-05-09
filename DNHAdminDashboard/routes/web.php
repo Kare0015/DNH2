@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/admin/enkelefactuur/{id}', 'FacturenController@enkelefactuur');
 
-Route::resource('invoice', 'invoiceController');
+Route::resource('invoice', 'InvoiceController');
 
 //Route::get('/transactions/index', 'TransactionController@index');
 
