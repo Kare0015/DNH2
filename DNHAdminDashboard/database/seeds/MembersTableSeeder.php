@@ -13,7 +13,6 @@ class MembersTableSeeder extends Seeder
     {
         DB::table('members')->insert([
             'firstname' => 'Pieter',
-            'prefix' => '',
             'surname' => 'Boot',
             'email' => 'pieter@boot.nl',
             'street' => 'Prins Hendrikweg',

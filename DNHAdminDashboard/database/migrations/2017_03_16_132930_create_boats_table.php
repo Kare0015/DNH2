@@ -15,9 +15,10 @@ class CreateBoatsTable extends Migration
     {
         Schema::create('boats', function (Blueprint $table) {
             $table->increments('id');
-            $table->boolean('mainBoat');
-            $table->string('boatName');
-            $table->integer('boatLength');
+            $table->integer('member_id');
+            $table->string('boatname');
+            $table->integer('boatlength')->unsigned();
+            $table->boolean('mainboat');
             $table->timestamps();
         });
     }

@@ -11,18 +11,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-//        DB::table('users')->insert([
-//            'name' => 'Giorgio Joziasse',
-//            'email' => 'giorgio_giorgio@me.com',
-//            'password' => 'dnhadmin'
-//        ]);
-//
-////        DB::table('users')->delete();
-//
-//        User::create(array(
-//            'name'    => 'Giorgio Joziase',
-//            'email'         => 'giorgio_giorgio@me.com',
-//            'password'      => Hash::make('dnhadmin')
-//        ));
+      DB::table('users')->insert([
+          'name' => 'Ad Min',
+          'email' => 'admin@admin.admin',
+          'password' => '$2y$10$sizYxDVDpEOxAHfQCjJ1OOTyj.pjbvnjqSmyMHJbzkDN2Sh6x4t.u',
+      ]);
     }
 }

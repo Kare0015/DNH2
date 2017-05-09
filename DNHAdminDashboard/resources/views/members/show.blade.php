@@ -10,27 +10,25 @@
 @stop
 
 @section('content')
-    <table class="table table-striped table-hover">
+{{$member->email}}
+{{$member['street']." ".$member['number']." ".$member['city']}}
+
+    <table id="example1" class="table table-bordered table-striped">
         <thead>
-        <th class="col-sm-1">Voornaam</th>
-        <th class="col-sm-4">Tussenvoegsel</th>
-        <th class="col-sm-2">Achternaam</th>
-        <th class="col-sm-2">Email</th>
-        <th class="col-sm-2">Adres</th>
+        <tr>
+            <th>Bootnaam</th>
+            <th>Lengte</th>
+            <th>Mainboat</th>
+        </tr>
         </thead>
         <tbody>
-        <tr>
-            <td class="table-text">{{ $member->firstname }}</td>
-            <td class="table-text">{{ $member->prefix }}</td>
-            <td class="table-text">{{ $member->surname }}</td>
-            <td class="table-text">{{ $member->email }}</td>
-            <td class="table-text">{{ $member->street, $member->number, $member->city }}</td>
-        </tr>
+        @foreach($member->boats as $boat)
+            <tr>
+                <td>{{$boat->boatname}}</td>
+                <td>{{$boat->boatlength}}</td>
+                <td>{{$boat->mainboat}}</td>
+            </tr>
+        @endforeach
         </tbody>
     </table>
-    <div class="col-sm-1">
-		 <a class="btn btn-default" href="{{action('MemberController@edit', $member->id)}}">Bewerken</a>
-	</div>
-
-
 @stop

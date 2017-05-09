@@ -42,3 +42,5 @@ Route::get('/members/toevoegen', 'MemberController@create');
 Route::post('new-member', array('uses' => 'MemberController@store'));
 
 Route::get('/members/{id}', 'MemberController@show');
+
+Route::resource('boat', 'BoatController');

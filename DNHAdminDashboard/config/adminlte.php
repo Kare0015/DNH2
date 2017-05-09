@@ -127,6 +127,11 @@ return [
             'icon'        => 'users',
         ],
         [
+            'text'        => 'Botenadministratie',
+            'url'         => 'boat',
+            'icon'        => 'anchor',
+        ],
+        [
             'text'        => 'Facturen',
             'url'         => 'admin/facturen',
             'icon'        => 'file-pdf-o',
@@ -140,6 +145,7 @@ return [
 //            'label'       => 4,
 //            'label_color' => 'success',
         ],
+
 //        'ACCOUNT SETTINGS',
 //        [
 //            'text' => 'Profile',
