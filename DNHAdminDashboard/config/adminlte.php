@@ -133,19 +133,24 @@ return [
         ],
         [
             'text'        => 'Facturen',
-            'url'         => 'admin/facturen',
+            'url'         => 'invoice',
             'icon'        => 'file-pdf-o',
 //            'label'       => 4,
 //            'label_color' => 'success',
         ],
         [
             'text'        => 'Transactielijst',
-            'url'         => 'transactions/translist',
+            'url'         => 'transaction/index',
             'icon'        => 'credit-card',
 //            'label'       => 4,
 //            'label_color' => 'success',
         ],
 
+        [
+            'text'        => 'create facturen',
+            'url'         => 'facturen/create',
+            'icon'        => 'file-pdf-c',
+        ]
 //        'ACCOUNT SETTINGS',
 //        [
 //            'text' => 'Profile',

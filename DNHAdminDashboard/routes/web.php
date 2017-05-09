@@ -19,14 +19,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/admin/facturen', 'FacturenController@facturen');
+//Route::get('/admin/facturen', 'FacturenController@facturenGenereren');
 
 Route::get('/admin/enkelefactuur/{id}', 'FacturenController@enkelefactuur');
 
-Route::get('/facturen/overview', 'FacturenController@facturenOverview');
+Route::resource('invoice', 'InvoiceController');
+
+Route::get('/facturen/create', 'FacturenController@createPDF');
 
 Route::get('/transactions/translist', 'TransactionController@translist');
-
 
 Route::get('/members', 'MemberController@index');
 
@@ -34,9 +35,6 @@ Route::resource('member', 'MemberController');
 
 Route::resource('transaction', 'TransactionController');
 
-Route::get('/transactions/toevoegen', function() {
-    return view('transactions.create');
-});
 Route::get('/members/toevoegen', 'MemberController@create');
 
 Route::post('new-member', array('uses' => 'MemberController@store'));
@@ -44,3 +42,6 @@ Route::post('new-member', array('uses' => 'MemberController@store'));
 Route::get('/members/{id}', 'MemberController@show');
 
 Route::resource('boat', 'BoatController');
+
+Route::get('/facturen/create', 'FacturenController@createPDF');
+

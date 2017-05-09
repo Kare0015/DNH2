@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 //namespace app toegevoegd om alle leden op te kunnen halen
 use App;
+//require(pdfTemp.php);
+
 
 class FacturenController extends Controller
 {
@@ -32,5 +32,12 @@ class FacturenController extends Controller
     {
         $member = App\Member::find($id);
         return view('/facturen/overview', compact('member'));
+    }
+    public function createPDF()
+    {
+
+        $members = App\Member::all();
+        return view('/facturen/create', compact('members'));
+//        return view('/facturen/pdfTemp', compact('members'));
     }
 }

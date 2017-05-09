@@ -1,6 +1,12 @@
 <?php
 
+//namespace Tests\Unit;
+
 namespace App;
+
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,11 +21,9 @@ class Member extends Model
         return $this->hasMany('App\Boat');
     }
 
-
-
-
-
-
-
+    public function invoices()
+    {
+        return $this->hasMany('App\Invoice');
+    }
 
 }
