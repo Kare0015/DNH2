@@ -4,8 +4,6 @@
 // Exemple de génération de devis/facture PDF
 
 
-
-
 $pdf = new PDF_Invoice( 'P', 'mm', 'A4' );
 $pdf->AddPage();
 $pdf->addSociete( "De Nieuwlandse Haven",
@@ -18,7 +16,8 @@ $pdf->addDate( date ('d-m-Y'));
 $pdf->addClient("CL01");
 $pdf->addPageNumber("1");
 
-$pdf->addClientAdresse("Bas Karelse\n Straat\n Middelburg");
+
+$pdf->addClientAdresse($invoice->member->firstname . ' ' . $invoice->member->surname );
 
 $pdf->addReglement(9);
 $pdf->addEcheance("Datum");

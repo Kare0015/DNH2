@@ -21,11 +21,11 @@ Route::get('/home', 'HomeController@index');
 
 //Route::get('/admin/facturen', 'FacturenController@facturenGenereren');
 
-Route::get('/admin/enkelefactuur/{id}', 'FacturenController@enkelefactuur');
+Route::get('/admin/enkelefactuur/{id}', 'InvoiceController@enkelefactuur');
 
 Route::resource('invoice', 'InvoiceController');
 
-Route::get('/facturen/create', 'FacturenController@createPDF');
+Route::get('/invoices/create/{id}', 'InvoiceController@createPDF');
 
 Route::get('/transactions/translist', 'TransactionController@translist');
 
@@ -43,5 +43,5 @@ Route::get('/members/{id}', 'MemberController@show');
 
 Route::resource('boat', 'BoatController');
 
-Route::get('/facturen/create', 'FacturenController@createPDF');
+
 

@@ -39,7 +39,7 @@
                                 <td>€ {{$invoice->totalamount}}</td>
                                 <th>
                                     {{--Link to the singe view of a invoice--}}
-                                    <a href="{{ URL::to('/admin/enkelefactuur/' . $invoice->id ) }})" class="btn btn-primary">Genereer deze factuur</a>
+                                    <a href="{{ URL::to('/invoices/create/' . $invoice->id ) }}" class="btn btn-primary">Genereer deze factuur</a>
                                 </th>
                             </tr>
                         @endforeach
@@ -66,7 +66,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Annuleren</button>
-                            <a class="btn btn-primary" href="{{ URL::to('/facturen/overview') }}">Ja, genereer alle facturen ({{$totalInvoices}})</a>
+                            <a class="btn btn-primary" href="{{ URL::to('/invoices/overview') }}">Ja, genereer alle facturen ({{$totalInvoices}})</a>
                         </div>
                     </div>
                     <!-- /.modal-content -->

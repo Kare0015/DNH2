@@ -80,4 +80,11 @@ class InvoiceController extends Controller
         // Redirect to the Invoice.index page with a success message.
         return redirect ( '/invoices' )->with( 'success', $invoice->id.' is verwijderd.' );
     }
+
+    public function createPDF($id)
+    {
+        $invoice = App\Invoice::find($id);
+
+        return view('/invoices/create', compact('invoice'));
+    }
 }

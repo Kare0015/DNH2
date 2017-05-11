@@ -19,5 +19,4 @@ class Invoice extends Model
     {
         return $this->belongsTo('App\Member');
     }
-
 }
